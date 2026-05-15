@@ -1,0 +1,91 @@
+<section class="section-pad dashboard-section">
+  <div class="container">
+    <div class="dash-header">
+      <div>
+        <h2>Welcome back, <span class="gradient-text">Ashwin</span> 👋</h2>
+        <p class="dash-subtitle">Here's your portfolio performance overview</p>
+      </div>
+      <div class="dash-date">{{ today | date:'EEEE, MMMM d' }}</div>
+    </div>
+
+    <div class="metrics-grid">
+      @for (metric of metrics; track metric.label) {
+        <div class="metric-card glass-card">
+          <div class="metric-icon" [style.background]="metric.gradient">{{ metric.icon }}</div>
+          <div class="metric-body">
+            <span class="metric-value gradient-text">{{ metric.value }}</span>
+            <span class="metric-label">{{ metric.label }}</span>
+            <span class="metric-change" [class.positive]="metric.positive">
+              {{ metric.positive ? '↑' : '↓' }} {{ metric.change }}
+            </span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-col">
+        <div class="glass-card dash-card">
+          <h4 class="dc-title">📈 Weekly Profile Views</h4>
+          <div class="chart-wrap">
+            @for (bar of weeklyData; track bar.day) {
+              <div class="chart-col">
+                <div class="chart-bar-wrap">
+                  <div class="chart-bar" [style.height.%]="bar.percent"
+                       [style.background]="'linear-gradient(180deg, #a855f7, #3b82f6)'"></div>
+                </div>
+                <span class="chart-day">{{ bar.day }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="glass-card dash-card">
+          <h4 class="dc-title">💬 Recent Messages</h4>
+          <div class="message-list">
+            @for (msg of recentMessages; track msg.name) {
+              <div class="msg-item">
+                <div class="msg-avatar">{{ msg.name[0] }}</div>
+                <div class="msg-body">
+                  <p class="msg-name">{{ msg.name }}</p>
+                  <p class="msg-preview">{{ msg.preview }}</p>
+                </div>
+                <span class="msg-time">{{ msg.time }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-col">
+        <div class="glass-card dash-card">
+          <h4 class="dc-title">🚀 Recent Activity</h4>
+          <div class="activity-list">
+            @for (act of activities; track act.text) {
+              <div class="activity-item">
+                <span class="act-icon">{{ act.icon }}</span>
+                <div>
+                  <p class="act-text">{{ act.text }}</p>
+                  <p class="act-time">{{ act.time }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="glass-card dash-card">
+          <h4 class="dc-title">💼 Job Applications</h4>
+          @for (app of jobApplications; track app.company) {
+            <div class="app-item">
+              <div class="app-info">
+                <p class="app-role">{{ app.role }}</p>
+                <p class="app-company">{{ app.company }}</p>
+              </div>
+              <span class="app-status neon-badge" [class]="app.statusClass">{{ app.status }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

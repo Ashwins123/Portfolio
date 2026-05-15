@@ -1,0 +1,72 @@
+<section class="section-pad about-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">About Me</span>
+      <h2>The Developer <span class="gradient-text">Behind the Code</span></h2>
+      <p>Enterprise-grade Angular developer with a passion for building products that matter.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-img-wrap float-anim">
+          <img src="assets/profile.jpg" alt="Ashwin S"
+               onerror="this.src='https://ui-avatars.com/api/?name=Ashwin+S&size=400&background=7c3aed&color=fff&bold=true'"/>
+          <div class="img-glow"></div>
+        </div>
+        <div class="location-card glass-card">
+          <span class="loc-icon">📍</span>
+          <div>
+            <p class="loc-city">Chennai, Tamil Nadu</p>
+            <p class="loc-country">India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="bio-card glass-card">
+          <h3>Who Am I?</h3>
+          <p>
+            I'm <strong>Ashwin S</strong>, a Frontend Developer (Angular) at <strong>Fiducia Score Pvt Ltd (TRSTScore)</strong>, Chennai.
+            I develop and maintain Background Verification platforms that automate candidate document validation — including
+            PAN card checks, employment verification, and address verification — improving processing efficiency and accuracy.
+          </p>
+          <p style="margin-top:12px;">
+            With strong proficiency in Angular 16, TypeScript, REST APIs, OAuth, and UI design, I bring a commitment to
+            continuous improvement and delivering value through frontend development. I've reduced document processing time
+            by 40%, led a team of 5 developers, and increased user satisfaction by 25% through UI enhancements.
+          </p>
+          <div class="bio-tags">
+            @for (tag of bioTags; track tag) {
+              <span class="neon-badge purple">{{ tag }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="quick-stats-grid">
+          @for (stat of quickStats; track stat.label) {
+            <div class="quick-stat-card glass-card">
+              <div class="qs-icon">{{ stat.icon }}</div>
+              <div class="qs-value gradient-text">{{ stat.value }}</div>
+              <div class="qs-label">{{ stat.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="info-cards-grid">
+      @for (card of infoCards; track card.title) {
+        <div class="info-card glass-card" [class.ai-card]="card.title === 'AI Tools'">
+          <div class="ic-icon">{{ card.icon }}</div>
+          <h4 class="ic-title gradient-text-purple">{{ card.title }}</h4>
+          <p class="ic-desc">{{ card.desc }}</p>
+          <ul class="ic-list">
+            @for (item of card.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

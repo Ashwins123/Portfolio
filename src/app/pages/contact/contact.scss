@@ -1,0 +1,42 @@
+.contact-section { background: var(--darker); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; align-items: start; @media (max-width: 900px) { grid-template-columns: 1fr; } }
+
+.contact-info { display: flex; flex-direction: column; gap: 16px; }
+.ci-card { padding: 28px;
+  h3 { font-size: 1.15rem; font-weight: 700; color: #f1f5f9; margin-bottom: 10px; }
+  p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px; }
+}
+
+.contact-items { display: flex; flex-direction: column; gap: 14px; }
+.contact-item { display: flex; align-items: flex-start; gap: 12px;
+  .ci-icon { font-size: 1.2rem; margin-top: 2px; }
+  .ci-label { color: #64748b; font-size: 0.78rem; margin: 0; }
+  .ci-value { color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin: 0; }
+}
+
+.availability-card { display: flex; align-items: center; gap: 14px; padding: 20px 24px;
+  .avail-dot { width: 12px; height: 12px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
+  .avail-title { font-weight: 600; color: #4ade80; font-size: 0.9rem; margin: 0; }
+  .avail-desc { color: #64748b; font-size: 0.8rem; margin: 0; }
+}
+@keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 10px #4ade80; } 50% { opacity: 0.7; box-shadow: 0 0 20px #4ade80; } }
+
+.contact-form-wrap { padding: 32px; .form-title { font-size: 1.15rem; font-weight: 700; color: #f1f5f9; margin-bottom: 24px; } }
+
+.form-group { margin-bottom: 20px;
+  label { display: block; color: #94a3b8; font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; }
+  input, textarea { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(124,58,237,0.3); border-radius: 10px; color: #f1f5f9; font-size: 0.9rem; outline: none; transition: all 0.25s; font-family: 'Inter', sans-serif; resize: vertical;
+    &:focus { border-color: #a855f7; box-shadow: 0 0 15px rgba(168,85,247,0.2); }
+    &::placeholder { color: #475569; }
+    &.error { border-color: rgba(239,68,68,0.5); }
+  }
+}
+
+.field-error { display: block; color: #f87171; font-size: 0.78rem; margin-top: 6px; }
+.submit-btn { width: 100%; justify-content: center; padding: 14px; font-size: 1rem; margin-top: 8px; &:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; } }
+.success-state { text-align: center; padding: 40px 20px;
+  .success-icon { font-size: 3rem; margin-bottom: 16px; }
+  h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+  p { color: #94a3b8; margin-bottom: 24px; }
+}

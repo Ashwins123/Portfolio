@@ -1,0 +1,51 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="nav-logo" (click)="navigate('/')">
+    <div class="logo-badge">AL</div>
+    <span class="logo-name">ProProfile</span>
+  </div>
+
+  <ul class="nav-links">
+    @for (link of navLinks; track link.path) {
+      <li>
+        <a [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: link.path === '/'}">
+          {{ link.label }}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <div class="nav-actions">
+    <button class="theme-toggle" (click)="theme.toggle()" [title]="theme.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+      @if (theme.isDark()) { ☀️ } @else { 🌙 }
+    </button>
+    @if (currentUser()) {
+      <a routerLink="/profile" class="nav-avatar-btn" title="My Profile">👤</a>
+      <button class="logout-btn" (click)="logout()">Sign Out</button>
+    } @else {
+      <a routerLink="/login" class="login-btn">Sign In</a>
+      <a routerLink="/contact" class="hire-btn">Hire Me</a>
+    }
+    <button class="menu-toggle" (click)="toggleMobile()">
+      @if (mobileOpen()) { ✕ } @else { ☰ }
+    </button>
+  </div>
+</nav>
+
+@if (mobileOpen()) {
+  <div class="mobile-menu">
+    @for (link of navLinks; track link.path) {
+      <a [routerLink]="link.path" routerLinkActive="active" (click)="mobileOpen.set(false)">
+        {{ link.label }}
+      </a>
+    }
+    <div class="mobile-auth-actions">
+      @if (currentUser()) {
+        <a routerLink="/profile" class="hire-btn" style="text-align:center" (click)="mobileOpen.set(false)">👤 Profile</a>
+        <button class="logout-btn-mobile" (click)="logout()">Sign Out</button>
+      } @else {
+        <a routerLink="/login" class="hire-btn" style="text-align:center" (click)="mobileOpen.set(false)">Sign In</a>
+        <a routerLink="/contact" class="hire-btn" style="text-align:center;margin-top:4px" (click)="mobileOpen.set(false)">Hire Me</a>
+      }
+    </div>
+  </div>
+}

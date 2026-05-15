@@ -1,0 +1,116 @@
+<section class="section-pad ai-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">AI Features</span>
+      <h2>AI-Powered <span class="gradient-text">Career Tools</span></h2>
+      <p>Supercharge your job search with intelligent suggestions and content generation.</p>
+    </div>
+
+    <div class="ai-tools-grid">
+      <div class="ai-tool-card glass-card" [class.active]="activeTool() === 'bio'">
+        <div class="ai-tool-header" (click)="setTool('bio')">
+          <span class="ai-tool-icon">🧠</span>
+          <h4>Bio Generator</h4>
+          <span class="ai-tool-arrow">{{ activeTool() === 'bio' ? '▲' : '▼' }}</span>
+        </div>
+        @if (activeTool() === 'bio') {
+          <div class="ai-tool-body">
+            <p class="ai-desc">Generate a professional developer bio based on your skills and experience.</p>
+            <div class="ai-form">
+              <input type="text" [value]="bioInput()" (input)="bioInput.set($any($event.target).value)"
+                     placeholder="e.g. Angular, 2 years, Chennai" class="ai-input"/>
+              <button class="btn-primary ai-btn" (click)="generateBio()" [disabled]="loading()">
+                @if (loading() && activeTool() === 'bio') { ⏳ Generating... } @else { ✨ Generate Bio }
+              </button>
+            </div>
+            @if (bioResult()) {
+              <div class="ai-result">
+                <p>{{ bioResult() }}</p>
+                <button class="copy-btn" (click)="copy(bioResult())">📋 Copy</button>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="ai-tool-card glass-card" [class.active]="activeTool() === 'resume'">
+        <div class="ai-tool-header" (click)="setTool('resume')">
+          <span class="ai-tool-icon">📄</span>
+          <h4>Resume Summary</h4>
+          <span class="ai-tool-arrow">{{ activeTool() === 'resume' ? '▲' : '▼' }}</span>
+        </div>
+        @if (activeTool() === 'resume') {
+          <div class="ai-tool-body">
+            <p class="ai-desc">Generate a powerful one-liner resume summary for your profile.</p>
+            <div class="ai-form">
+              <textarea [value]="resumeInput()" (input)="resumeInput.set($any($event.target).value)"
+                        rows="3" class="ai-input" placeholder="Paste your experience bullet points..."></textarea>
+              <button class="btn-primary ai-btn" (click)="generateResumeSummary()" [disabled]="loading()">
+                @if (loading() && activeTool() === 'resume') { ⏳ Generating... } @else { ✨ Generate Summary }
+              </button>
+            </div>
+            @if (resumeResult()) {
+              <div class="ai-result">
+                <p>{{ resumeResult() }}</p>
+                <button class="copy-btn" (click)="copy(resumeResult())">📋 Copy</button>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="ai-tool-card glass-card" [class.active]="activeTool() === 'skills'">
+        <div class="ai-tool-header" (click)="setTool('skills')">
+          <span class="ai-tool-icon">🎯</span>
+          <h4>Skill Suggestions</h4>
+          <span class="ai-tool-arrow">{{ activeTool() === 'skills' ? '▲' : '▼' }}</span>
+        </div>
+        @if (activeTool() === 'skills') {
+          <div class="ai-tool-body">
+            <p class="ai-desc">Get AI-powered skill recommendations to boost your career.</p>
+            <div class="ai-form">
+              <input type="text" [value]="skillInput()" (input)="skillInput.set($any($event.target).value)"
+                     placeholder="Your current role: Angular Developer" class="ai-input"/>
+              <button class="btn-primary ai-btn" (click)="suggestSkills()" [disabled]="loading()">
+                @if (loading() && activeTool() === 'skills') { ⏳ Analysing... } @else { 🔍 Suggest Skills }
+              </button>
+            </div>
+            @if (skillSuggestions().length) {
+              <div class="ai-result">
+                <div class="suggestions-grid">
+                  @for (s of skillSuggestions(); track s) {
+                    <span class="neon-badge purple">{{ s }}</span>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="ai-tool-card glass-card" [class.active]="activeTool() === 'career'">
+        <div class="ai-tool-header" (click)="setTool('career')">
+          <span class="ai-tool-icon">🚀</span>
+          <h4>Career Suggestions</h4>
+          <span class="ai-tool-arrow">{{ activeTool() === 'career' ? '▲' : '▼' }}</span>
+        </div>
+        @if (activeTool() === 'career') {
+          <div class="ai-tool-body">
+            <p class="ai-desc">AI-curated next steps and roles that match your Angular expertise.</p>
+            <div class="suggestions-grid">
+              @for (s of careerSuggestions; track s.role) {
+                <div class="career-card">
+                  <span class="career-icon">{{ s.icon }}</span>
+                  <div>
+                    <p class="career-role">{{ s.role }}</p>
+                    <p class="career-match neon-badge green">{{ s.match }} match</p>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<canvas id="particles-canvas"></canvas>
+
+@if (isLoading()) {
+  <app-loading-screen></app-loading-screen>
+} @else {
+  <div class="page-container">
+    <app-navbar [hidden]="isAuthPage()"></app-navbar>
+    <main>
+      <router-outlet />
+    </main>
+    <app-footer [hidden]="isAuthPage()"></app-footer>
+  </div>
+}

@@ -1,0 +1,68 @@
+<section class="section-pad experience-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Experience</span>
+      <h2>My <span class="gradient-text">Career Journey</span></h2>
+      <p>A timeline of growth, learning, and impactful work.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-spine"></div>
+
+      @for (exp of experiences; track exp.year; let i = $index) {
+        <div class="timeline-item" [class.right]="i % 2 !== 0">
+          <div class="timeline-dot">
+            <span class="dot-inner"></span>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="tc-header">
+              <span class="tc-year neon-badge purple">{{ exp.year }}</span>
+              <span class="tc-type neon-badge" [class]="exp.typeClass">{{ exp.type }}</span>
+            </div>
+            <h3 class="tc-role gradient-text">{{ exp.role }}</h3>
+            <p class="tc-company">🏢 {{ exp.company }}</p>
+            <p class="tc-desc">{{ exp.description }}</p>
+            <div class="tc-skills">
+              @for (skill of exp.skills; track skill) {
+                <span class="tech-chip">{{ skill }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="section-header" style="margin-top: 64px">
+      <span class="section-tag">Education</span>
+      <h2>Academic <span class="gradient-text">Background</span></h2>
+    </div>
+
+    <div class="edu-grid">
+      @for (edu of education; track edu.year) {
+        <div class="edu-card glass-card">
+          <div class="edu-header">
+            <span class="neon-badge" [class]="edu.typeClass">{{ edu.type }}</span>
+            <span class="edu-year">{{ edu.year }}</span>
+          </div>
+          <h3 class="edu-degree gradient-text">{{ edu.degree }}</h3>
+          <p class="edu-inst">🎓 {{ edu.institution }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="section-header" style="margin-top: 64px">
+      <span class="section-tag">Achievements</span>
+      <h2>Key <span class="gradient-text">Impact</span></h2>
+    </div>
+
+    <div class="achievements-grid">
+      @for (a of achievements; track a.title) {
+        <div class="achievement-card glass-card">
+          <div class="ach-icon">{{ a.icon }}</div>
+          <h4 class="ach-title gradient-text-purple">{{ a.title }}</h4>
+          <p class="ach-desc">{{ a.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,86 @@
+<section class="section-pad jobs-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Job Portal</span>
+      <h2>Find Your Next <span class="gradient-text">Opportunity</span></h2>
+      <p>Curated Angular and frontend roles matched to your expertise.</p>
+    </div>
+
+    <div class="jobs-toolbar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search by title, company or tech..."
+               class="search-input" [(ngModel)]="searchQuery" (input)="filterJobs()"/>
+      </div>
+      <div class="toolbar-filters">
+        <div class="filter-group">
+          <label>Type</label>
+          <div class="filter-pills">
+            @for (t of typeFilters; track t) {
+              <button class="filter-pill" [class.active]="selectedType === t"
+                      (click)="selectedType = t; filterJobs()">{{ t }}</button>
+            }
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Mode</label>
+          <div class="filter-pills">
+            @for (r of remoteFilters; track r) {
+              <button class="filter-pill" [class.active]="selectedRemote === r"
+                      (click)="selectedRemote = r; filterJobs()">{{ r }}</button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-count">
+      <span class="neon-badge blue">{{ filteredJobs.length }} jobs found</span>
+    </div>
+
+    <div class="jobs-grid">
+      @for (job of filteredJobs; track job.id) {
+        <div class="job-card glass-card" [routerLink]="['/jobs', job.id]">
+          <div class="job-card-header">
+            <div class="company-logo">{{ job.logo }}</div>
+            <div class="job-meta">
+              <h3 class="job-title">{{ job.title }}</h3>
+              <p class="job-company">{{ job.company }}</p>
+            </div>
+            <button class="save-btn" [class.saved]="isSaved(job.id)" (click)="toggleSave(job.id, $event)"
+                    title="{{ isSaved(job.id) ? 'Unsave' : 'Save job' }}">
+              {{ isSaved(job.id) ? '🔖' : '📌' }}
+            </button>
+          </div>
+
+          <div class="job-tags">
+            <span class="neon-badge" [class]="job.remote ? 'cyan' : 'blue'">
+              {{ job.remote ? '🌐 Remote' : '🏢 On-site' }}
+            </span>
+            <span class="neon-badge purple">{{ job.type }}</span>
+            <span class="neon-badge green">{{ job.salary }}</span>
+          </div>
+
+          <p class="job-desc">{{ job.description }}</p>
+
+          <div class="job-stack">
+            @for (tech of job.techStack; track tech) {
+              <span class="tech-chip">{{ tech }}</span>
+            }
+          </div>
+
+          <div class="job-footer">
+            <span class="job-location">📍 {{ job.location }}</span>
+            <span class="job-posted">🕐 {{ job.posted }}</span>
+          </div>
+        </div>
+      }
+
+      @if (filteredJobs.length === 0) {
+        <div class="no-results glass-card">
+          <p>😔 No jobs match your search. Try different filters.</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

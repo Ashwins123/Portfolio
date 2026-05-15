@@ -1,0 +1,18 @@
+<div class="loader-overlay">
+  <div class="loader-content">
+    <div class="logo-ring">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      <div class="logo-center">
+        <span class="logo-text">AL</span>
+      </div>
+    </div>
+    <h2 class="loading-name">Ashwin Loren</h2>
+    <p class="loading-title">Angular Developer</p>
+    <div class="progress-track">
+      <div class="progress-fill" [style.width.%]="progress()"></div>
+    </div>
+    <p class="loading-percent">{{ progress() | number:'1.0-0' }}%</p>
+  </div>
+</div>

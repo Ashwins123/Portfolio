@@ -1,0 +1,58 @@
+<footer class="site-footer">
+  <div class="footer-glow-line"></div>
+
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-row">
+          <div class="footer-logo-badge">AL</div>
+          <span class="footer-logo-name gradient-text">ProProfile</span>
+        </div>
+        <p class="footer-tagline">
+          Enterprise Angular Developer · Building scalable web products
+          with clean architecture and premium UI/UX.
+        </p>
+        <div class="footer-socials">
+          @for (s of socials; track s.label) {
+            <a [href]="s.url" target="_blank" class="social-chip" [title]="s.label">{{ s.icon }}</a>
+          }
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="footer-group-title">Navigation</h4>
+        <ul>
+          @for (link of navLinks; track link.path) {
+            <li><a [routerLink]="link.path" class="footer-link">{{ link.label }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="footer-group-title">Platform</h4>
+        <ul>
+          <li><a routerLink="/dashboard" class="footer-link">Dashboard</a></li>
+          <li><a routerLink="/resume" class="footer-link">Resume</a></li>
+          <li><a routerLink="/jobs" class="footer-link">Job Portal</a></li>
+          <li><a routerLink="/ai" class="footer-link">AI Features</a></li>
+          <li><a routerLink="/profile" class="footer-link">My Profile</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4 class="footer-group-title">Get In Touch</h4>
+        <div class="footer-contact-items">
+          <p>📧 ashwinloren435s&#64;gmail.com</p>
+          <p>📍 Chennai, Tamil Nadu, India</p>
+          <p>🟢 Open to opportunities</p>
+        </div>
+        <a routerLink="/contact" class="btn-outline-glow footer-cta">Hire Me</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {{ year }} <span class="gradient-text">Ashwin S</span>. Built with Angular {{ '21' }} + Supabase.</p>
+      <p class="footer-made">Made with ❤️ in Chennai</p>
+    </div>
+  </div>
+</footer>

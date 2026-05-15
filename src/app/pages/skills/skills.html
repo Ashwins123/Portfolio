@@ -1,0 +1,55 @@
+<section class="section-pad skills-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Skills</span>
+      <h2>My <span class="gradient-text">Technical Arsenal</span></h2>
+      <p>Technologies and tools I use to build enterprise-grade applications.</p>
+    </div>
+
+    <div class="category-tabs">
+      @for (cat of categories; track cat.key) {
+        <button class="cat-tab" [class.active]="activeCategory() === cat.key"
+                (click)="setCategory(cat.key)">
+          {{ cat.icon }} {{ cat.label }}
+        </button>
+      }
+    </div>
+
+    <div class="skills-grid">
+      @for (skill of filteredSkills(); track skill.name) {
+        <div class="skill-card glass-card">
+          <div class="skill-header">
+            <div class="skill-icon">{{ skill.icon }}</div>
+            <div class="skill-info">
+              <h4 class="skill-name">{{ skill.name }}</h4>
+              <span class="neon-badge" [class]="skill.badgeClass">{{ skill.level }}</span>
+            </div>
+            <span class="skill-percent gradient-text">{{ skill.percent }}%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" [style.width.%]="skill.animated ? skill.percent : 0"></div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="tools-section">
+      <div class="section-header" style="margin-bottom: 32px">
+        <span class="section-tag">AI Tools</span>
+        <h3 class="tools-title">AI Tools I <span class="gradient-text">Work With</span></h3>
+        <p>Leveraging AI to accelerate development, design, and productivity.</p>
+      </div>
+      <div class="ai-tools-grid">
+        @for (tool of aiTools; track tool.name) {
+          <div class="ai-tool-card glass-card">
+            <div class="ai-tool-icon" [style.color]="tool.color">{{ tool.icon }}</div>
+            <div class="ai-tool-body">
+              <h4 class="ai-tool-name" [style.color]="tool.color">{{ tool.name }}</h4>
+              <p class="ai-tool-desc">{{ tool.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

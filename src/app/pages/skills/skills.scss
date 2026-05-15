@@ -1,0 +1,60 @@
+.skills-section { background: var(--dark); }
+
+.category-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 48px; }
+
+.cat-tab {
+  padding: 10px 22px; border-radius: 50px; background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(124,58,237,0.2); color: #94a3b8; font-size: 0.88rem; font-weight: 500;
+  cursor: pointer; transition: all 0.25s;
+  &:hover, &.active { background: rgba(124,58,237,0.15); border-color: rgba(168,85,247,0.5); color: #a855f7; box-shadow: 0 0 15px rgba(124,58,237,0.2); }
+}
+
+.skills-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px;
+  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.skill-card {
+  padding: 24px;
+  .skill-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .skill-icon { font-size: 1.8rem; }
+  .skill-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .skill-name { font-weight: 600; font-size: 0.95rem; color: #f1f5f9; margin: 0; }
+  .skill-percent { font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
+}
+
+.skill-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 50px; overflow: hidden; }
+.skill-fill { height: 100%; border-radius: 50px; background: linear-gradient(90deg, #7c3aed, #2563eb, #06b6d4); box-shadow: 0 0 8px rgba(124,58,237,0.5); transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+
+.tools-section { margin-top: 20px; }
+.tools-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+
+.ai-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  @media (max-width: 1100px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.ai-tool-card {
+  display: flex; align-items: flex-start; gap: 16px; padding: 22px;
+  transition: all 0.3s;
+  &:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(124,58,237,0.2); }
+}
+
+.ai-tool-icon {
+  font-size: 2rem; line-height: 1; flex-shrink: 0;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.ai-tool-body { flex: 1; }
+
+.ai-tool-name {
+  font-size: 0.95rem; font-weight: 700; margin: 0 0 6px;
+}
+
+.ai-tool-desc {
+  font-size: 0.82rem; color: #64748b; line-height: 1.6; margin: 0;
+}

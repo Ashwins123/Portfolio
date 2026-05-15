@@ -1,0 +1,41 @@
+.ai-section { background: var(--dark); }
+
+.ai-tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; @media (max-width: 768px) { grid-template-columns: 1fr; } }
+
+.ai-tool-card { overflow: hidden; transition: all 0.3s ease;
+  &.active { border-color: rgba(168,85,247,0.6); box-shadow: 0 0 30px rgba(124,58,237,0.2); }
+}
+
+.ai-tool-header { display: flex; align-items: center; gap: 12px; padding: 20px 24px; cursor: pointer; transition: background 0.2s; &:hover { background: rgba(255,255,255,0.03); }
+  .ai-tool-icon { font-size: 1.6rem; }
+  h4 { flex: 1; font-size: 1rem; font-weight: 700; color: #f1f5f9; margin: 0; }
+  .ai-tool-arrow { color: #a855f7; font-size: 0.75rem; }
+}
+
+.ai-tool-body { padding: 0 24px 24px; border-top: 1px solid rgba(124,58,237,0.15); padding-top: 20px; animation: slideDown 0.25s ease;
+  .ai-desc { color: #64748b; font-size: 0.88rem; margin-bottom: 16px; }
+}
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+.ai-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.ai-input { width: 100%; padding: 11px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(124,58,237,0.3); border-radius: 10px; color: #f1f5f9; font-size: 0.88rem; outline: none; transition: all 0.25s; font-family: 'Inter', sans-serif; resize: vertical;
+  &:focus { border-color: #a855f7; box-shadow: 0 0 12px rgba(168,85,247,0.2); }
+  &::placeholder { color: #475569; }
+}
+
+.ai-btn { align-self: flex-start; padding: 10px 24px; &:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; } }
+
+.ai-result { background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.2); border-radius: 10px; padding: 16px; animation: fadeIn 0.4s ease;
+  p { color: #94a3b8; font-size: 0.88rem; line-height: 1.8; margin-bottom: 12px; }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.copy-btn { padding: 6px 14px; border-radius: 6px; background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3); color: #a855f7; font-size: 0.78rem; font-weight: 500; cursor: pointer; transition: all 0.2s; &:hover { background: rgba(168,85,247,0.25); } }
+
+.suggestions-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.career-card { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(124,58,237,0.15); width: 100%; margin-bottom: 8px;
+  .career-icon { font-size: 1.2rem; }
+  .career-role { font-size: 0.88rem; font-weight: 600; color: #f1f5f9; margin: 0 0 4px; }
+  .career-match { display: inline-block; font-size: 0.75rem; }
+}

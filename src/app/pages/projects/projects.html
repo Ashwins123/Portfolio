@@ -1,0 +1,50 @@
+<section class="section-pad projects-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Projects</span>
+      <h2>Work That <span class="gradient-text">Speaks for Itself</span></h2>
+      <p>Real-world applications built with modern technologies and production mindset.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search projects..." class="search-input"
+               [(ngModel)]="searchQuery" (input)="filterProjects()" />
+      </div>
+      <div class="filter-tabs">
+        @for (tag of filterTags; track tag) {
+          <button class="filter-tab" [class.active]="activeFilter === tag"
+                  (click)="setFilter(tag)">{{ tag }}</button>
+        }
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of filteredProjects; track project.title) {
+        <div class="project-card glass-card">
+          <div class="project-img-wrap">
+            <img [src]="project.image" [alt]="project.title"
+                 onerror="this.src='https://via.placeholder.com/400x220/1a1a3e/a855f7?text=Project'"/>
+            <div class="project-overlay">
+              <a [href]="project.live" target="_blank" class="overlay-btn">Live Demo</a>
+              @if (project.github) {
+                <a [href]="project.github" target="_blank" class="overlay-btn outline">GitHub</a>
+              }
+            </div>
+            <span class="status-badge-card" [class]="project.statusClass">{{ project.status }}</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-desc">{{ project.description }}</p>
+            <div class="tech-stack">
+              @for (tech of project.techStack; track tech) {
+                <span class="tech-chip">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

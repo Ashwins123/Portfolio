@@ -1,0 +1,120 @@
+@if (job) {
+<section class="section-pad job-detail-section">
+  <div class="container">
+    <a routerLink="/jobs" class="back-link">← Back to Jobs</a>
+
+    <div class="job-detail-grid">
+      <div class="job-main">
+        <div class="jd-header glass-card">
+          <div class="jd-company-row">
+            <div class="company-logo-lg">{{ job.logo }}</div>
+            <div>
+              <h1 class="jd-title gradient-text">{{ job.title }}</h1>
+              <p class="jd-company">{{ job.company }}</p>
+            </div>
+          </div>
+
+          <div class="jd-tags">
+            <span class="neon-badge" [class]="job.remote ? 'cyan' : 'blue'">
+              {{ job.remote ? '🌐 Remote' : '🏢 On-site' }}
+            </span>
+            <span class="neon-badge purple">{{ job.type }}</span>
+            <span class="neon-badge green">{{ job.salary }}</span>
+            <span class="neon-badge blue">🕐 {{ job.posted }}</span>
+          </div>
+
+          @if (applied) {
+            <div class="applied-banner">
+              ✅ Application Submitted! We'll be in touch soon.
+            </div>
+          } @else {
+            <div class="jd-actions">
+              <button class="btn-primary" (click)="apply()">🚀 Apply Now</button>
+              <a routerLink="/contact" class="btn-outline-glow">📬 Contact Directly</a>
+            </div>
+          }
+        </div>
+
+        <div class="jd-section glass-card">
+          <h3>📋 About the Role</h3>
+          <p>{{ job.description }}</p>
+        </div>
+
+        <div class="jd-section glass-card">
+          <h3>✅ Requirements</h3>
+          <ul class="req-list">
+            @for (req of job.requirements; track req) {
+              <li><span class="req-dot"></span>{{ req }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="jd-section glass-card">
+          <h3>🛠 Tech Stack</h3>
+          <div class="tech-stack-wrap">
+            @for (tech of job.techStack; track tech) {
+              <span class="tech-chip">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="job-sidebar">
+        <div class="jd-info-card glass-card">
+          <h4>Job Overview</h4>
+          <div class="info-row">
+            <span class="info-icon">🏢</span>
+            <div>
+              <p class="info-label">Company</p>
+              <p class="info-val">{{ job.company }}</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">📍</span>
+            <div>
+              <p class="info-label">Location</p>
+              <p class="info-val">{{ job.location }}</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">💼</span>
+            <div>
+              <p class="info-label">Job Type</p>
+              <p class="info-val">{{ job.type }}</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">💰</span>
+            <div>
+              <p class="info-label">Salary</p>
+              <p class="info-val">{{ job.salary }}</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">🌐</span>
+            <div>
+              <p class="info-label">Work Mode</p>
+              <p class="info-val">{{ job.remote ? 'Remote / Hybrid' : 'On-site' }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="jd-match-card glass-card">
+          <h4>Your Match Score</h4>
+          <div class="match-ring">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" class="match-bg"/>
+              <circle cx="50" cy="50" r="40" class="match-fill"
+                      style="stroke-dasharray:251.2; stroke-dashoffset:37.68"/>
+            </svg>
+            <div class="match-center">
+              <span class="match-num gradient-text">85%</span>
+            </div>
+          </div>
+          <p class="match-label">Strong match based on your Angular skills</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}

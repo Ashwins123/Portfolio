@@ -1,0 +1,86 @@
+<section class="section-pad resume-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Resume</span>
+      <h2>My <span class="gradient-text">Professional Resume</span></h2>
+      <p>A full summary of my experience, skills, and education.</p>
+    </div>
+
+    <div class="resume-grid">
+      <div class="resume-preview-col">
+        <div class="resume-card glass-card">
+          <div class="resume-preview-header">
+            <div class="rp-avatar">AS</div>
+            <div>
+              <h3>Ashwin S</h3>
+              <p>Angular Developer · TRSTScore · Chennai</p>
+            </div>
+          </div>
+          <div class="resume-score-wrap">
+            <div class="score-ring">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" class="score-bg"/>
+                <circle cx="50" cy="50" r="40" class="score-fill"
+                        [style.stroke-dasharray]="'251.2'"
+                        [style.stroke-dashoffset]="scoreOffset"/>
+              </svg>
+              <div class="score-center">
+                <span class="score-num gradient-text">{{ resumeScore }}</span>
+                <span class="score-lbl">Score</span>
+              </div>
+            </div>
+            <div class="score-breakdown">
+              @for (item of scoreBreakdown; track item.label) {
+                <div class="score-item">
+                  <span class="si-label">{{ item.label }}</span>
+                  <div class="si-bar">
+                    <div class="si-fill" [style.width.%]="item.score"
+                         [style.background]="item.color"></div>
+                  </div>
+                  <span class="si-val">{{ item.score }}%</span>
+                </div>
+              }
+            </div>
+          </div>
+          <div class="resume-actions">
+            <a href="resume.pdf" download="Ashwin_S_Resume.pdf" class="btn-primary">⬇ Download PDF</a>
+            <a href="resume.pdf" target="_blank" class="btn-outline-glow">👁 Preview</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-detail-col">
+        <div class="resume-section-block glass-card">
+          <h4 class="rsb-title">🎓 Education</h4>
+          @for (edu of education; track edu.degree) {
+            <div class="rsb-item">
+              <div class="rsb-year neon-badge blue">{{ edu.year }}</div>
+              <h5>{{ edu.degree }}</h5>
+              <p>{{ edu.institution }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="resume-section-block glass-card">
+          <h4 class="rsb-title">💼 Experience Summary</h4>
+          @for (exp of expSummary; track exp.role) {
+            <div class="rsb-item">
+              <div class="rsb-year neon-badge purple">{{ exp.period }}</div>
+              <h5>{{ exp.role }}</h5>
+              <p>{{ exp.highlights }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="resume-section-block glass-card">
+          <h4 class="rsb-title">🛠 Skills Summary</h4>
+          <div class="skills-cloud">
+            @for (skill of skillsSummary; track skill) {
+              <span class="neon-badge purple">{{ skill }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
