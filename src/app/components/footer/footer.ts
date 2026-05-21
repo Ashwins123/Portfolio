@@ -20,7 +20,7 @@ export class Footer {
   ];
 
   socials = [
-    { icon: 'GH', label: 'GitHub', url: 'https://github.com/ashwinloren' },
+    { icon: 'GH', label: 'GitHub', url: 'https://github.com/Ashwins123' },
     { icon: 'LI', label: 'LinkedIn', url: 'https://www.linkedin.com/in/ashwin-loren/' },
     { icon: 'FB', label: 'Facebook', url: 'https://www.facebook.com/ashwin_loren' },
     { icon: 'IG', label: 'Instagram', url: 'https://www.instagram.com/ashwin_loren/' },

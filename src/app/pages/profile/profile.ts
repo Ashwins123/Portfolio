@@ -30,7 +30,7 @@ export class Profile {
       role: ['Angular Developer at TRSTScore', Validators.required],
       location: ['Chennai, Tamil Nadu, India', Validators.required],
       bio: ['Frontend Developer at Fiducia Score Pvt Ltd (TRSTScore). Proficiency in Angular and a background in enhancing operational efficiency through technology. Passionate about delivering value through frontend development and transforming user experiences.', Validators.required],
-      github: ['https://github.com/ashwinloren'],
+      github: ['https://github.com/Ashwins123'],
       linkedin: ['https://www.linkedin.com/in/ashwin-loren/'],
       website: ['https://ashwinloren.dev'],
     });

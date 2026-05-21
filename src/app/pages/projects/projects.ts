@@ -16,17 +16,17 @@ interface Project {
 export class Projects implements OnInit {
   searchQuery = '';
   activeFilter = 'All';
-  filterTags = ['All', 'Angular', 'Supabase', 'Firebase', 'Node.js', 'MongoDB'];
+  filterTags = ['All', 'Angular', 'Supabase', 'Firebase', 'React', 'MongoDB'];
 
   allProjects: Project[] = [
     {
       title: 'ZenBotChat',
       description: 'Real-time chat application with group messaging, typing indicators, seen status, and smooth animations powered by Supabase Realtime.',
       image: 'assets/projects/zenbotchat.png',
-      techStack: ['Angular', 'Supabase', 'RxJS', 'SCSS'],
+      techStack: ['Angular', 'Supabase', 'RxJS', 'SCSS','Netlify'],
       live: 'https://zenbotchat.netlify.app',
-      github: 'https://github.com/ashwinloren/zenbotchat',
-      status: 'Live', statusClass: 'live',
+      github: 'https://github.com/Ashwins123/ZenBotChat',
+      status: 'In Progress', statusClass: 'wip',
       tags: ['Angular', 'Supabase'],
     },
     {
@@ -35,9 +35,9 @@ export class Projects implements OnInit {
       image: 'assets/projects/VerifiQ.png',
       techStack: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Chart.js', 'OCR', 'Replit'],
       live: 'https://verifi-q--ashwinloren.replit.app',
-      github: '',
+      github: 'https://github.com/Ashwins123/VerifiQ',
       status: 'Live', statusClass: 'live',
-      tags: ['Angular', 'Node.js', 'MongoDB'],
+      tags: ['React', 'MongoDB'],
     },
     {
       title: 'Finder',
@@ -45,39 +45,49 @@ export class Projects implements OnInit {
       image: 'assets/projects/angularjobfinder.png',
       techStack: ['Angular', 'TypeScript', 'Tailwind CSS', 'React', 'Vite', 'Lucide', 'Radix UI', 'Replit'],
       live: 'https://finder--Ashwinlorens.replit.app',
-      github: '',
+      github: 'https://github.com/Ashwins123/Finder',
       status: 'live', statusClass: 'live',
-      tags: ['Angular'],
+      tags: ['React','MongoDB'],
     },
     {
       title: 'My Portfolio',
       description: 'My Portfolio is a modern and responsive portfolio website showcasing projects, skills, and experience with a clean, user-friendly design.',
       image: 'assets/projects/myportfolio.png',
-      techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS', 'Tailwind CSS', 'Angular Material', 'tsParticles', 'AOS', 'Supabase', 'Netlify'],
-      live: 'https://infinityprofile.netlify.app/',
-      github: '',
+      techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS', 'Tailwind CSS', 'Angular Material', 'tsParticles', 'AOS', 'Supabase', 'Vercel'],
+      live: 'https://lorenfolio.vercel.app/',
+      github: 'https://github.com/Ashwins123/Portfolio',
       status: 'Live', statusClass: 'live',
+      tags: ['Angular', 'Supabase'],
+    },
+    {
+      title: 'MovieMint',
+      description: 'Real-time movie ticket booking platform with movie browsing, category filtering, show details, responsive layouts, and smooth user experience inspired by modern cinema applications.',
+      image: 'assets/projects/MovieMint.png',
+      techStack: ['Angular', 'TypeScript', 'SCSS', 'REST APIs', 'Vercel'],
+      live: 'https://top-movie-mint.vercel.app/',
+      github: 'https://github.com/Ashwins123/MovieMint',
+      status: 'Live', statusClass: 'live',
+      tags: ['Angular'],
+    },
+    {
+      title: 'ProProfile',
+      description: 'Full-stack career platform combining portfolio, resume system, job portal, dashboard analytics, auth, and AI tools in one SaaS product.',
+      image: 'assets/projects/proprofile.png',
+      techStack: ['Angular', 'Supabase', 'Angular Material', 'Tailwind', 'AI','Vercel'],
+      live: 'https://my-pro-profile.vercel.app/home',
+      github: 'https://github.com/Ashwins123/ProProfile',
+      status: 'Live', statusClass: 'Live',
       tags: ['Angular', 'Supabase'],
     },
     {
       title: 'TaskZen Pro',
       description: 'A full-featured task management application with dashboard, CRUD operations, filtering, and analytics. Built with enterprise Angular patterns.',
       image: 'assets/projects/taskzen.png',
-      techStack: ['Angular', 'TypeScript', 'Firebase', 'Angular Material', 'Tailwind'],
-      live: 'https://taskzenpro.netlify.app',
-      github: 'https://github.com/ashwinloren/taskzen-pro',
+      techStack: ['Angular', 'TypeScript', 'Firebase', 'Angular Material', 'Tailwind','Vercel'],
+      live: 'https://task-zen-pro.vercel.app/auth',
+      github: 'https://github.com/Ashwins123/TaskZenPro',
       status: 'Live', statusClass: 'live',
       tags: ['Angular', 'Firebase'],
-    },
-    {
-      title: 'ProProfile',
-      description: 'Full-stack career platform combining portfolio, resume system, job portal, dashboard analytics, auth, and AI tools in one SaaS product.',
-      image: 'assets/projects/proprofile.png',
-      techStack: ['Angular', 'Supabase', 'Angular Material', 'Tailwind', 'AI'],
-      live: 'https://ashwinloren.dev',
-      github: 'https://github.com/ashwinloren/proprofile',
-      status: 'In Progress', statusClass: 'wip',
-      tags: ['Angular', 'Supabase'],
     },
   ];
 
