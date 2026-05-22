@@ -34,7 +34,7 @@ export class Dashboard {
     { icon: '👁', text: 'Your profile was viewed 12 times', time: '2 hours ago' },
     { icon: '⬇', text: 'Resume downloaded by a recruiter', time: '4 hours ago' },
     { icon: '💬', text: 'New message from Priya S.', time: '5 hours ago' },
-    { icon: '🚀', text: 'ProProfile project starred on GitHub', time: '1 day ago' },
+    { icon: '🚀', text: 'lorenfolio project starred on GitHub', time: '1 day ago' },
     { icon: '💼', text: 'Applied to Angular Developer at TechCorp', time: '2 days ago' },
   ];
 
