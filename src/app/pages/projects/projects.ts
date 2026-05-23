@@ -65,7 +65,7 @@ export class Projects implements OnInit {
       description: 'Real-time movie ticket booking platform with movie browsing, category filtering, show details, responsive layouts, and smooth user experience inspired by modern cinema applications.',
       image: 'assets/projects/MovieMint.png',
       techStack: ['Angular', 'TypeScript', 'SCSS', 'REST APIs', 'Vercel'],
-      live: 'https://top-movie-mint.vercel.app/',
+      live: 'https://watchmint.vercel.app/',
       github: 'https://github.com/Ashwins123/MovieMint',
       status: 'Live', statusClass: 'live',
       tags: ['Angular', 'Vercel'],
