@@ -16,18 +16,19 @@ interface Project {
 export class Projects implements OnInit {
   searchQuery = '';
   activeFilter = 'All';
-  filterTags = ['All', 'Angular', 'Supabase', 'Firebase', 'React', 'MongoDB'];
+  filterTags = ['All', 'Angular', 'Supabase', 'Firebase', 'React', 'MongoDB', 'Vercel', 'Replit'];
 
   allProjects: Project[] = [
     {
       title: 'ZenBotChat',
       description: 'Real-time chat application with group messaging, typing indicators, seen status, and smooth animations powered by Supabase Realtime.',
       image: 'assets/projects/zenbotchat.png',
-      techStack: ['Angular', 'Supabase', 'RxJS', 'SCSS','Netlify'],
-      live: 'https://zenbotchat.netlify.app',
+      techStack: ['Angular', 'Supabase', 'RxJS', 'SCSS','Vercel'],
+      live: 'https://zenbotchat.vercel.app/auth/login',
       github: 'https://github.com/Ashwins123/ZenBotChat',
-      status: 'In Progress', statusClass: 'wip',
-      tags: ['Angular', 'Supabase'],
+      // status: 'In Progress', statusClass: 'wip',
+      status: 'Live', statusClass: 'live',
+      tags: ['Angular', 'Supabase', 'Vercel'],
     },
     {
       title: 'VerifiQ',
@@ -37,7 +38,7 @@ export class Projects implements OnInit {
       live: 'https://verifi-q--ashwinloren.replit.app',
       github: 'https://github.com/Ashwins123/VerifiQ',
       status: 'Live', statusClass: 'live',
-      tags: ['React', 'MongoDB'],
+      tags: ['React', 'MongoDB', 'Replit'],
     },
     {
       title: 'Finder',
@@ -47,7 +48,7 @@ export class Projects implements OnInit {
       live: 'https://finder--Ashwinlorens.replit.app',
       github: 'https://github.com/Ashwins123/Finder',
       status: 'live', statusClass: 'live',
-      tags: ['React','MongoDB'],
+      tags: ['React','MongoDB','Replit'],
     },
     {
       title: 'My Portfolio',
@@ -57,7 +58,7 @@ export class Projects implements OnInit {
       live: 'https://lorenfolio.vercel.app/',
       github: 'https://github.com/Ashwins123/Portfolio',
       status: 'Live', statusClass: 'live',
-      tags: ['Angular', 'Supabase'],
+      tags: ['Angular', 'Supabase', 'Vercel'],
     },
     {
       title: 'MovieMint',
@@ -67,7 +68,7 @@ export class Projects implements OnInit {
       live: 'https://top-movie-mint.vercel.app/',
       github: 'https://github.com/Ashwins123/MovieMint',
       status: 'Live', statusClass: 'live',
-      tags: ['Angular'],
+      tags: ['Angular', 'Vercel'],
     },
     {
       title: 'ProProfile',
@@ -77,17 +78,17 @@ export class Projects implements OnInit {
       live: 'https://my-pro-profile.vercel.app/home',
       github: 'https://github.com/Ashwins123/ProProfile',
       status: 'Live', statusClass: 'Live',
-      tags: ['Angular', 'Supabase'],
+      tags: ['Angular', 'Supabase', 'Vercel'],
     },
     {
-      title: 'TaskZen Pro',
+      title: 'TaskZenPro',
       description: 'A full-featured task management application with dashboard, CRUD operations, filtering, and analytics. Built with enterprise Angular patterns.',
       image: 'assets/projects/taskzen.png',
       techStack: ['Angular', 'TypeScript', 'Firebase', 'Angular Material', 'Tailwind','Vercel'],
       live: 'https://task-zen-pro.vercel.app/auth',
       github: 'https://github.com/Ashwins123/TaskZenPro',
       status: 'Live', statusClass: 'live',
-      tags: ['Angular', 'Firebase'],
+      tags: ['Angular', 'Firebase', 'Vercel'],
     },
   ];
 
