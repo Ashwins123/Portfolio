@@ -85,7 +85,7 @@ export class Projects implements OnInit {
       description: 'A full-featured task management application with dashboard, CRUD operations, filtering, and analytics. Built with enterprise Angular patterns.',
       image: 'assets/projects/taskzen.png',
       techStack: ['Angular', 'TypeScript', 'Firebase', 'Angular Material', 'Tailwind','Vercel'],
-      live: 'https://task-zen-pro.vercel.app/auth',
+      live: 'https://taskzenpro.vercel.app/auth',
       github: 'https://github.com/Ashwins123/TaskZenPro',
       status: 'Live', statusClass: 'live',
       tags: ['Angular', 'Firebase', 'Vercel'],
