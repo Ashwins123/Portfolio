@@ -71,7 +71,7 @@ export class Projects implements OnInit {
       tags: ['Angular', 'Vercel'],
     },
     {
-      title: 'ProProfile',
+      title: 'AshfolioX',
       description: 'Full-stack career platform combining portfolio, resume system, job portal, dashboard analytics, auth, and AI tools in one SaaS product.',
       image: 'assets/projects/proprofile.png',
       techStack: ['Angular', 'Supabase', 'Angular Material', 'Tailwind', 'AI','Vercel'],
