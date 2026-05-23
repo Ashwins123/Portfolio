@@ -16,7 +16,7 @@ interface Project {
 export class Projects implements OnInit {
   searchQuery = '';
   activeFilter = 'All';
-  filterTags = ['All', 'Angular', 'Supabase', 'Firebase', 'React', 'MongoDB', 'Vercel', 'Replit'];
+  filterTags = ['All', 'Angular', 'React', 'Supabase', 'Firebase', 'MongoDB', 'Vercel', 'Replit'];
 
   allProjects: Project[] = [
     {
