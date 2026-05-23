@@ -51,7 +51,7 @@ export class Projects implements OnInit {
       tags: ['React','MongoDB','Replit'],
     },
     {
-      title: 'My Portfolio',
+      title: 'LorenFolio',
       description: 'My Portfolio is a modern and responsive portfolio website showcasing projects, skills, and experience with a clean, user-friendly design.',
       image: 'assets/projects/myportfolio.png',
       techStack: ['Angular', 'TypeScript', 'RxJS', 'SCSS', 'Tailwind CSS', 'Angular Material', 'tsParticles', 'AOS', 'Supabase', 'Vercel'],
